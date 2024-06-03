@@ -3,7 +3,7 @@ from langchain.prompts import PromptTemplate
 import json
 
 def deploy_and_test_model(model_name, prompt_text):
-    # # Deploy the model
+    # Deploy the model
     # model_endpoint = Bedrock.create_endpoint(
     #     endpointName=f"{model_name}-endpoint",
     #     modelIdentifier=model_name
@@ -23,7 +23,7 @@ def deploy_and_test_model(model_name, prompt_text):
 
     prompt_template_name = PromptTemplate(
         input_variables=[prompt_text],
-        template="You are a standup comedian who makes jokes on news headline take this news article content and make a humorous joke out of it and make sure the joke doesn't exceed more than 2 to 3 lines and make sure that the joke matches with the original news headline, here is the content, {prompt_text}"
+        template = "You are a standup comedian who creates short jokes based on news headlines. Given the following news article content, generate a humorous joke that is exactly 2 to 3 lines long and relevant to the original headline. Here is the content: {prompt_text}"
     )
 
     rendered_prompt = prompt_template_name.format(prompt_text=prompt_text)
@@ -50,13 +50,3 @@ Officials cut off electricity in northern Kearny for safety reasons, and four ai
 
 model_name = 'fine_tunned_Titan_onAIJoke'
 deploy_and_test_model(model_name, example_prompt)
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,6 @@
+boto3
+langchain
+json
+s3_creation
+streamlit
+os
